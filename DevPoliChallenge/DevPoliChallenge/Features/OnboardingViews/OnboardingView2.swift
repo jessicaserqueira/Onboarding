@@ -27,13 +27,13 @@ class OnboardingView2: UIView {
         return image
     }()
     
-    private lazy var skipButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("pular", for: .normal)
-        button.setTitleColor(DesignSystem.Colors.secondary, for: .normal)
-        button.titleLabel?.font = .sfProTextRegular(ofSize: 15)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "OnboardingView2.nextButton"
+    private lazy var skipButton: CustomButton = {
+        let button = CustomButton(title: "pular",
+            font: .sfProTextRegular(ofSize: 15),
+            backgroundColor: .clear,
+            textColor: DesignSystem.Colors.secondary,
+            cornerRadius: 0,
+            accessibilityIdentifier: "OnboardingView2.nextButton")
         return button
     }()
     
@@ -66,14 +66,14 @@ class OnboardingView2: UIView {
         return label
     }()
     
-    private lazy var nextButton: UIButton = {
-        let button = UIButton()
+    private lazy var nextButton: CustomButton = {
+        let button = CustomButton(title: "",
+            font: .systemFont(ofSize: 15),
+            backgroundColor: DesignSystem.Colors.accent,
+            textColor: .white,
+            cornerRadius: 22,
+            accessibilityIdentifier: "OnboardingView2.nextButton")
         button.setImage(UIImage(named: "icon-arrow-right"), for: .normal)
-        button.backgroundColor = DesignSystem.Colors.accent
-        button.layer.cornerRadius = 22
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "OnboardingView2.nextButton"
         return button
     }()
     
