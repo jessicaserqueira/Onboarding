@@ -16,5 +16,6 @@ extension DesignSystem {
         static let tertiary: UIColor = .init(hex: "#513B56")
         static let accent: UIColor = .init(hex: "#5DD39E")
         static let background: UIColor = .init(hex: "#E8F7FC")
+        static let customBackgroundView2: UIColor = .init(hex: "#89C5CC")
     }
 }
