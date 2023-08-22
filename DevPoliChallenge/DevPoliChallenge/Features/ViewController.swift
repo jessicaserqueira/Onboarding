@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var customView = OnboardingView1()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DesignSystem.Colors.background
+        view = customView
     }
 
 }
