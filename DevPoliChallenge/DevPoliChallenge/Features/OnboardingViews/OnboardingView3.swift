@@ -1,78 +1,70 @@
 //
-//  OnboardingView1.swift
+//  OnboardingView3.swift
 //  DevPoliChallenge
 //
-//  Created by Jessica Serqueira on 21/08/23.
+//  Created by Jessica Serqueira on 22/08/23.
 //  Copyright © 2023 DevPoli. All rights reserved.
 //
 
 import UIKit
 
-class OnboardingView1: UIView {
+class OnboardingView3: UIView {
     
     private lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = DesignSystem.Colors.primary
-        view.accessibilityIdentifier = "OnboardingView1.mainView"
+        view.backgroundColor = DesignSystem.Colors.accent
+        view.accessibilityIdentifier = "OnboardingView3.mainView"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "imagem1")
+        image.image = UIImage(named: "imagem3")
         image.contentMode = .scaleAspectFit
-        image.accessibilityIdentifier = "OnboardingView1.image"
+        image.accessibilityIdentifier = "OnboardingView3.image"
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
-    }()
-    
-    private lazy var skipButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("pular", for: .normal)
-        button.titleLabel?.font = .sfProTextRegular(ofSize: 15)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "OnboardingView1.nextButton"
-        return button
     }()
     
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.accessibilityIdentifier = "OnboardingView1.containerView"
+        view.accessibilityIdentifier = "OnboardingView3.containerView"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Explore uma nova forma de organizar sua vida."
+        label.text = "Conquiste mais, se preocupe menos."
         label.font = .sfProTextBold(ofSize: 22)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "OnboardingView1.titleLabel"
+        label.accessibilityIdentifier = "OnboardingView3.titleLabel"
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Descubra como nosso aplicativo pode ajudar você a planejar, acompanhar e concluir suas tarefas de maneira mais eficiente. Prepare-se para uma experiência incrível de produtividade!"
+        label.text = "Com o nosso app, suas tarefas viram conquistas. Acompanhe seu progresso, marque itens concluídos e sinta a satisfação de ver suas metas se tornarem realidade. Este é o começo de uma jornada mais produtiva e realizadora!"
         label.font = .sfProTextRegular(ofSize: 16)
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "OnboardingView1.descriptionLabel"
+        label.accessibilityIdentifier = "OnboardingView3.descriptionLabel"
         return label
     }()
     
-    private lazy var nextButton: UIButton = {
+    private lazy var startButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "icon-arrow-right"), for: .normal)
+        button.setTitle("COMEÇAR", for: .normal)
+        button.titleLabel?.font = .sfProTextBold(ofSize: 15)
         button.backgroundColor = DesignSystem.Colors.accent
         button.layer.cornerRadius = 22
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "OnboardingView1.nextButton"
+        button.accessibilityIdentifier = "OnboardingView3.startButton"
         return button
     }()
     
@@ -92,16 +84,15 @@ class OnboardingView1: UIView {
 
 // MARK: - Constraints
 
-extension OnboardingView1 {
+extension OnboardingView3 {
     func configureSubviews() {
         addSubview(mainView)
-        mainView.addSubview(skipButton)
         mainView.addSubview(image)
         
         addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
-        containerView.addSubview(nextButton)
+        containerView.addSubview(startButton)
     }
     
     func setupConstraints() {
@@ -110,11 +101,10 @@ extension OnboardingView1 {
             mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             
-            skipButton.topAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.topAnchor, constant: -32),
-            skipButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -23),
+            image.topAnchor.constraint(greaterThanOrEqualTo: mainView.topAnchor, constant: 139),
+            image.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
             
-            image.topAnchor.constraint(greaterThanOrEqualTo: mainView.topAnchor, constant: 117),
-            image.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             
             containerView.heightAnchor.constraint(equalToConstant: 318),
             containerView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 0),
@@ -130,10 +120,10 @@ extension OnboardingView1 {
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
-            nextButton.heightAnchor.constraint(equalToConstant: 44),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant:  -22),
-            nextButton.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -26)
+            startButton.heightAnchor.constraint(equalToConstant: 44),
+            startButton.widthAnchor.constraint(equalToConstant: 167),
+            startButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant:  -22),
+            startButton.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -26)
             
         ])
     }
@@ -141,7 +131,7 @@ extension OnboardingView1 {
 
 // MARK: - Actions
 
-extension OnboardingView1 {
+extension OnboardingView3 {
     func setupActions() {
         
     }

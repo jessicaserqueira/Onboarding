@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var customView = OnboardingView2()
+    var customView = OnboardingView3()
     
     override func viewDidLoad() {
         super.viewDidLoad()

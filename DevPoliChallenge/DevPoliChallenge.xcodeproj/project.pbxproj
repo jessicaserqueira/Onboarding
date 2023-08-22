@@ -21,6 +21,7 @@
 		A47A86CE2A93A98100407E13 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86CB2A93A98100407E13 /* SF-Pro-Text-Bold.otf */; };
 		A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */; };
 		A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */; };
+		A47A86D92A94F14D00407E13 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86D82A94F14D00407E13 /* OnboardingView3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A47A86CB2A93A98100407E13 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
 		A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
+		A47A86D82A94F14D00407E13 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				A47A86C62A93A09F00407E13 /* OnboardingView1.swift */,
 				A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */,
+				A47A86D82A94F14D00407E13 /* OnboardingView3.swift */,
 			);
 			path = OnboardingViews;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				A47A86C72A93A09F00407E13 /* OnboardingView1.swift in Sources */,
 				4C3862A82A758819005C9C3B /* ViewController.swift in Sources */,
 				4C33FF352A75A4550002E765 /* DS+Colors.swift in Sources */,
+				A47A86D92A94F14D00407E13 /* OnboardingView3.swift in Sources */,
 				4C33FF332A75A3F40002E765 /* DS.swift in Sources */,
 				A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */,
 				4C33FF2E2A75A2640002E765 /* UIColor+ext.swift in Sources */,
