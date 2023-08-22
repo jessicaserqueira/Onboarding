@@ -20,6 +20,7 @@
 		A47A86CD2A93A98100407E13 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */; };
 		A47A86CE2A93A98100407E13 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86CB2A93A98100407E13 /* SF-Pro-Text-Bold.otf */; };
 		A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */; };
+		A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		A47A86CB2A93A98100407E13 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
+		A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A47A86C62A93A09F00407E13 /* OnboardingView1.swift */,
+				A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */,
 			);
 			path = OnboardingViews;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */,
 				4C33FF2E2A75A2640002E765 /* UIColor+ext.swift in Sources */,
 				4C3862A42A758819005C9C3B /* AppDelegate.swift in Sources */,
+				A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */,
 				4C3862A62A758819005C9C3B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
