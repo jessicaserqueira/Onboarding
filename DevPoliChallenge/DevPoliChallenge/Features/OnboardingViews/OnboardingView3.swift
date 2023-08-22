@@ -56,15 +56,13 @@ class OnboardingView3: UIView {
         return label
     }()
     
-    private lazy var startButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("COMEÇAR", for: .normal)
-        button.titleLabel?.font = .sfProTextBold(ofSize: 15)
-        button.backgroundColor = DesignSystem.Colors.accent
-        button.layer.cornerRadius = 22
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.accessibilityIdentifier = "OnboardingView3.startButton"
+    private lazy var startButton: CustomButton = {
+        let button = CustomButton(title: "COMEÇAR",
+                                  font: .sfProTextBold(ofSize: 15),
+                                  backgroundColor: DesignSystem.Colors.accent,
+                                  textColor: .white,
+                                  cornerRadius: 22,
+                                  accessibilityIdentifier: "OnboardingView3.startButton")
         return button
     }()
     

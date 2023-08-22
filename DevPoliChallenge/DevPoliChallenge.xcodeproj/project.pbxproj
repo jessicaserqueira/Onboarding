@@ -22,6 +22,8 @@
 		A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */; };
 		A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */; };
 		A47A86D92A94F14D00407E13 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86D82A94F14D00407E13 /* OnboardingView3.swift */; };
+		A47A86DC2A94FBD100407E13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86DB2A94FBD100407E13 /* LoginView.swift */; };
+		A47A86DF2A9526F300407E13 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86DE2A9526F300407E13 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
 		A47A86D62A94EDFA00407E13 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		A47A86D82A94F14D00407E13 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
+		A47A86DB2A94FBD100407E13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A47A86DE2A9526F300407E13 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		4C3862A22A758819005C9C3B /* DevPoliChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A47A86DD2A9526DA00407E13 /* Components */,
 				A47A86C82A93A7F300407E13 /* Fonts */,
 				4C33FF2F2A75A3810002E765 /* DesignSystem */,
 				4C33FF2C2A75A2560002E765 /* Utils */,
@@ -126,6 +131,7 @@
 		4C3862B92A758A98005C9C3B /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A47A86DA2A94FBBD00407E13 /* Login */,
 				A47A86C52A93A08000407E13 /* OnboardingViews */,
 				4C3862A72A758819005C9C3B /* ViewController.swift */,
 			);
@@ -150,6 +156,22 @@
 				A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A47A86DA2A94FBBD00407E13 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A47A86DB2A94FBD100407E13 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A47A86DD2A9526DA00407E13 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A47A86DE2A9526F300407E13 /* CustomButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +256,8 @@
 				A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */,
 				4C33FF2E2A75A2640002E765 /* UIColor+ext.swift in Sources */,
 				4C3862A42A758819005C9C3B /* AppDelegate.swift in Sources */,
+				A47A86DF2A9526F300407E13 /* CustomButton.swift in Sources */,
+				A47A86DC2A94FBD100407E13 /* LoginView.swift in Sources */,
 				A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */,
 				4C3862A62A758819005C9C3B /* SceneDelegate.swift in Sources */,
 			);
