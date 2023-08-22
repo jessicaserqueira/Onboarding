@@ -21,6 +21,7 @@ class OnboardingView2: UIView {
     private lazy var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "imagem2")
+        image.contentMode = .scaleAspectFit
         image.accessibilityIdentifier = "OnboardingView2.image"
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -30,6 +31,7 @@ class OnboardingView2: UIView {
         let button = UIButton()
         button.setTitle("pular", for: .normal)
         button.setTitleColor(DesignSystem.Colors.secondary, for: .normal)
+        button.titleLabel?.font = .sfProTextRegular(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityIdentifier = "OnboardingView2.nextButton"
         return button
@@ -112,8 +114,9 @@ extension OnboardingView2 {
             skipButton.topAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.topAnchor, constant: -32),
             skipButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -23),
             
-            image.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 117),
-            image.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
+            image.topAnchor.constraint(greaterThanOrEqualTo: mainView.topAnchor, constant: 96),
+            image.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 85),
+            image.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -85),
             
             containerView.heightAnchor.constraint(equalToConstant: 318),
             containerView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 0),
