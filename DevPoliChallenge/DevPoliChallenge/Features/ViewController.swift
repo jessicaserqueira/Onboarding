@@ -5,18 +5,24 @@
 //  Created by DevPoli on 29/07/23.
 //  Copyright © 2023 DevPoli. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
     
-    var customView = OnboardingView1()
+    var onboardingPageVC: OnboardingPageViewController!
+    var pageControl = UIPageControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = DesignSystem.Colors.background
-        view = customView
+        
+        view.backgroundColor = UIColor.white
+        showOnboarding()
     }
-
+    
+    func showOnboarding() {
+        onboardingPageVC = OnboardingPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+        addChild(onboardingPageVC)
+        view.addSubview(onboardingPageVC.view)
+    }
 }
 

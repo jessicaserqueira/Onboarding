@@ -15,6 +15,7 @@
 		4C3862A82A758819005C9C3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3862A72A758819005C9C3B /* ViewController.swift */; };
 		4C3862AD2A75881C005C9C3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3862AC2A75881C005C9C3B /* Assets.xcassets */; };
 		4C3862B02A75881C005C9C3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3862AE2A75881C005C9C3B /* LaunchScreen.storyboard */; };
+		A418A1E72A963324007C51C3 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1E62A963324007C51C3 /* OnboardingPageController.swift */; };
 		A47A86C72A93A09F00407E13 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86C62A93A09F00407E13 /* OnboardingView1.swift */; };
 		A47A86CC2A93A98100407E13 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86C92A93A98100407E13 /* SF-Pro-Text-Medium.otf */; };
 		A47A86CD2A93A98100407E13 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */; };
@@ -38,6 +39,7 @@
 		4C3862AC2A75881C005C9C3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C3862AF2A75881C005C9C3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C3862B12A75881C005C9C3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A418A1E62A963324007C51C3 /* OnboardingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageController.swift; sourceTree = "<group>"; };
 		A47A86C62A93A09F00407E13 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		A47A86C92A93A98100407E13 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A47A86DA2A94FBBD00407E13 /* Login */,
 				A47A86C52A93A08000407E13 /* OnboardingViews */,
 				4C3862A72A758819005C9C3B /* ViewController.swift */,
+				A418A1E62A963324007C51C3 /* OnboardingPageController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				A47A86DC2A94FBD100407E13 /* LoginView.swift in Sources */,
 				A47A86D72A94EDFA00407E13 /* OnboardingView2.swift in Sources */,
 				4C3862A62A758819005C9C3B /* SceneDelegate.swift in Sources */,
+				A418A1E72A963324007C51C3 /* OnboardingPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
