@@ -110,14 +110,10 @@ extension LoginView {
             signUPButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -71),
             signUPButton.heightAnchor.constraint(equalToConstant: 44),
             
-            
             signINButton.topAnchor.constraint(equalTo: signUPButton.bottomAnchor, constant: 12),
             signINButton.leadingAnchor.constraint(equalTo: signUPButton.leadingAnchor),
             signINButton.trailingAnchor.constraint(equalTo: signUPButton.trailingAnchor),
             signINButton.heightAnchor.constraint(equalToConstant: 44)
-            
-            
-            
         ])
     }
 }
