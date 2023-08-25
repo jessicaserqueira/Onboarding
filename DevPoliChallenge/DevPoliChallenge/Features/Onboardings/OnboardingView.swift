@@ -1,79 +1,93 @@
 //
-//  OnboardingView2.swift
+//  OnboardingView1.swift
 //  DevPoliChallenge
 //
-//  Created by Jessica Serqueira on 22/08/23.
+//  Created by Jessica Serqueira on 21/08/23.
 //  Copyright © 2023 DevPoli. All rights reserved.
 //
-
 import UIKit
 
-class OnboardingView2: UIView {
+class OnboardingView: UIView {
     
-    private lazy var mainView: UIView = {
+    weak var delegate: OnboardingViewDelegate?
+    
+    lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = DesignSystem.Colors.background
-        view.accessibilityIdentifier = "OnboardingView2.mainView"
+        view.accessibilityIdentifier = "OnboardingView1.mainView"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var image: UIImageView = {
+    lazy var image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "imagem2")
+        
         image.contentMode = .scaleAspectFit
-        image.accessibilityIdentifier = "OnboardingView2.image"
+        image.accessibilityIdentifier = "OnboardingView1.image"
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    private lazy var skipButton: CustomButton = {
-        let button = CustomButton(title: "pular",
+    lazy var skipButton: CustomButton = {
+        let button = CustomButton(
+            title: "",
             font: .sfProTextRegular(ofSize: 15),
             backgroundColor: .clear,
-            textColor: DesignSystem.Colors.secondary,
+            textColor: .white,
             cornerRadius: 0,
-            accessibilityIdentifier: "OnboardingView2.nextButton")
+            accessibilityIdentifier: "OnboardingView2.nextButton"
+        )
         return button
     }()
     
-    private lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.accessibilityIdentifier = "OnboardingView2.containerView"
+        view.accessibilityIdentifier = "OnboardingView1.containerView"
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Simplifique seu dia a dia."
         label.font = .sfProTextBold(ofSize: 22)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "OnboardingView2.titleLabel"
+        label.accessibilityIdentifier = "OnboardingView1.titleLabel"
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Com nosso app, você pode criar listas de tarefas personalizadas, definir prioridades e nunca mais perder um prazo. Chega de confusão! Deixe-nos ajudar a tornar suas atividades diárias mais organizadas e tranquilas."
         label.font = .sfProTextRegular(ofSize: 16)
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.accessibilityIdentifier = "OnboardingView2.descriptionLabel"
+        label.accessibilityIdentifier = "OnboardingView1.descriptionLabel"
         return label
     }()
     
-    private lazy var nextButton: CustomButton = {
-        let button = CustomButton(title: "",
+    lazy var nextButton: CustomButton = {
+        let button = CustomButton(
+            title: "",
             font: .systemFont(ofSize: 15),
             backgroundColor: DesignSystem.Colors.accent,
             textColor: .white,
             cornerRadius: 22,
-            accessibilityIdentifier: "OnboardingView2.nextButton")
-        button.setImage(UIImage(named: "icon-arrow-right"), for: .normal)
+            accessibilityIdentifier: "OnboardingView1.nextButton"
+        )
+        
+        return button
+    }()
+    
+    lazy var startButton: CustomButton = {
+        let button = CustomButton(
+            title: "",
+            font: .sfProTextBold(ofSize: 15),
+            backgroundColor: .clear,
+            textColor: .white,
+            cornerRadius: 22,
+            accessibilityIdentifier: "OnboardingView.startButton"
+        )
         return button
     }()
     
@@ -93,7 +107,7 @@ class OnboardingView2: UIView {
 
 // MARK: - Constraints
 
-extension OnboardingView2 {
+extension OnboardingView {
     func configureSubviews() {
         addSubview(mainView)
         mainView.addSubview(skipButton)
@@ -103,6 +117,7 @@ extension OnboardingView2 {
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
         containerView.addSubview(nextButton)
+        containerView.addSubview(startButton)
     }
     
     func setupConstraints() {
@@ -111,12 +126,13 @@ extension OnboardingView2 {
             mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             
-            skipButton.topAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.topAnchor, constant: -32),
-            skipButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -23),
+            skipButton.heightAnchor.constraint(equalToConstant: 18),
+            skipButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
+            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -23),
             
-            image.topAnchor.constraint(greaterThanOrEqualTo: mainView.topAnchor, constant: 96),
-            image.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 85),
-            image.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -85),
+            image.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 117),
+            image.leadingAnchor.constraint(equalTo: leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             containerView.heightAnchor.constraint(equalToConstant: 318),
             containerView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 0),
@@ -134,17 +150,27 @@ extension OnboardingView2 {
             
             nextButton.heightAnchor.constraint(equalToConstant: 44),
             nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant:  -22),
-            nextButton.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -26)
+            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -22),
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -26),
             
+            startButton.heightAnchor.constraint(equalToConstant: 44),
+            startButton.widthAnchor.constraint(equalToConstant: 167),
+            startButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -22),
+            startButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -26),
         ])
     }
 }
 
 // MARK: - Actions
 
-extension OnboardingView2 {
+extension OnboardingView {
     func setupActions() {
-        
+        skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func skipButtonTapped() {
+        delegate?.showLogin()
+        print("cliquei aqui")
     }
 }
