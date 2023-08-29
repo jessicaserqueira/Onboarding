@@ -11,7 +11,6 @@ import UIKit
 class OnboardingViewController: UIViewController, OnboardingViewDelegate {
     
     var onboardingPageVC: OnboardingPageViewController!
-    var pageControl = UIPageControl()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,8 +27,19 @@ class OnboardingViewController: UIViewController, OnboardingViewDelegate {
         onboardingPageVC.delegate = onboardingPageVC
         onboardingPageVC.dataSource = onboardingPageVC
         onboardingPageVC.onboardingViewDelegate = self
+        
         addChild(onboardingPageVC)
         view.addSubview(onboardingPageVC.view)
+        
+        onboardingPageVC.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            onboardingPageVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            onboardingPageVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            onboardingPageVC.view.topAnchor.constraint(equalTo: view.topAnchor),
+            onboardingPageVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        onboardingPageVC.didMove(toParent: self)
     }
     
     func showLogin() {

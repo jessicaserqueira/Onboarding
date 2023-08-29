@@ -10,7 +10,7 @@ import UIKit
 
 final class CustomScrollView: UIView {
     
-    // MARK: UI Components
+    weak var onboardingViewDelegate: OnboardingViewDelegate?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -45,7 +45,7 @@ final class CustomScrollView: UIView {
         configureConstraints()
     }
     
-    private func configureConstraints(){
+    private func configureConstraints() {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -56,6 +56,41 @@ final class CustomScrollView: UIView {
             contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: CGFloat(contentStackView.arrangedSubviews.count)),
         ])
+    }
+    
+    public func configureViews(pageData: [(backgroundColor: UIColor, imageName: String, title: String, description: String, buttonTitle: String, buttonTextColor: UIColor, isStartButton: Bool)]) {
+        contentStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        for page in pageData {
+            let onboardingPage = createOnboardingPage(
+                backgroundColor: page.backgroundColor,
+                imageName: page.imageName,
+                title: page.title,
+                description: page.description,
+                buttonTitle: page.buttonTitle,
+                buttonTextColor: page.buttonTextColor,
+                isStartButton: page.isStartButton
+            )
+            contentStackView.addArrangedSubview(onboardingPage.view)
+        }
+    }
+    
+    func createOnboardingPage(backgroundColor: UIColor, imageName: String, title: String, description: String, buttonTitle: String, buttonTextColor: UIColor, isStartButton: Bool) -> UIViewController {
+        let onboardingView = OnboardingView()
+        onboardingView.delegate = onboardingViewDelegate
+        onboardingView.configure(
+            backgroundColor: backgroundColor,
+            imageName: imageName,
+            title: title,
+            description: description,
+            buttonTitle: buttonTitle,
+            buttonTextColor: buttonTextColor,
+            isStartButton: isStartButton
+        )
+        let viewController = UIViewController()
+        viewController.view = onboardingView
+        return viewController
     }
 }

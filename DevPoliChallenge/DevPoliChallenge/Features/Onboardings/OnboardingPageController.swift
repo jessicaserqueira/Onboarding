@@ -13,37 +13,28 @@ class OnboardingPageViewController: UIPageViewController {
     weak var onboardingViewDelegate: OnboardingViewDelegate?
     
     var pages: [UIViewController] = []
-    let pageControl = UIPageControl()
     let initialPage = 0
     var isPerformingSkipAction = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageViewController()
-        stylePageViewController()
         layoutPageViewController()
     }
     
-    func stylePageViewController() {
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.pageIndicatorTintColor = UIColor(red: 93/255, green: 211/255, blue: 158/255, alpha: 0.5)
-        pageControl.currentPageIndicatorTintColor = DesignSystem.Colors.accent
-        pageControl.numberOfPages = pages.count
-        pageControl.currentPage = initialPage
-        pageControl.layer.cornerRadius = 6
-        pageControl.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-    }
-    
     func layoutPageViewController() {
-        view.addSubview(pageControl)
+        let customPageControl = CustomPageControlView(pageCount: pages.count, currentPageIndex: initialPage)
+        customPageControl.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(customPageControl)
         
         NSLayoutConstraint.activate([
-            pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -22),
-            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -26),
-            pageControl.heightAnchor.constraint(equalToConstant: 30),
-            pageControl.widthAnchor.constraint(equalToConstant: 150)
+            customPageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            customPageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -26),
+            customPageControl.heightAnchor.constraint(equalToConstant: customPageControl.currentPageDotSize.height),
+            customPageControl.widthAnchor.constraint(equalToConstant: CGFloat(pages.count) * customPageControl.otherPageDotSize.width + CGFloat(pages.count - 1) * customPageControl.dotSpacing)
         ])
     }
+    
     func markOnboardingAsCompleted() {
         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
     }
@@ -125,15 +116,6 @@ extension OnboardingPageViewController {
     }
 }
 
-
-// MARK: - Actions
-
-extension OnboardingPageViewController {
-    @objc func pageControlTapped(_ sender: UIPageControl) {
-        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
-    }
-}
-
 // MARK: - DataSources
 
 extension OnboardingPageViewController: UIPageViewControllerDataSource {
@@ -164,12 +146,17 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
 
 extension OnboardingPageViewController: UIPageViewControllerDelegate, OnboardingViewDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
-        guard let viewControllers = pageViewController.viewControllers else { return }
-        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
-        
-        pageControl.currentPage = currentIndex
-    }
+           guard completed,
+                 let viewControllers = pageViewController.viewControllers,
+                 let currentIndex = pages.firstIndex(of: viewControllers[0]) else {
+               return
+           }
+           
+           if let customPageControlView = view.subviews.first(where: { $0 is CustomPageControlView }) as? CustomPageControlView {
+               customPageControlView.currentPageIndex = currentIndex
+               customPageControlView.layoutIfNeeded()
+           }
+       }
     
     func showLogin() {
         onboardingViewDelegate?.showLogin()
