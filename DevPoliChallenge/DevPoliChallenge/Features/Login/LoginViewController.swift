@@ -10,11 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    private var viewModel: LoginViewModel
     private var customView: LoginView
     
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
+    init() {
         self.customView = LoginView()
         super.init(nibName: nil, bundle: nil)
     }

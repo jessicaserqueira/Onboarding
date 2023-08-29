@@ -18,8 +18,6 @@
 		A418A1E72A963324007C51C3 /* OnboardingPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1E62A963324007C51C3 /* OnboardingPageController.swift */; };
 		A418A1E92A968D46007C51C3 /* OnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1E82A968D46007C51C3 /* OnboardingDelegate.swift */; };
 		A418A1EC2A968DF6007C51C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1EB2A968DF6007C51C3 /* LoginViewController.swift */; };
-		A418A1EE2A968E1C007C51C3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1ED2A968E1C007C51C3 /* LoginViewModel.swift */; };
-		A418A1F02A968EAF007C51C3 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A418A1EF2A968EAF007C51C3 /* OnboardingViewModel.swift */; };
 		A47A86C72A93A09F00407E13 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86C62A93A09F00407E13 /* OnboardingView.swift */; };
 		A47A86CC2A93A98100407E13 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86C92A93A98100407E13 /* SF-Pro-Text-Medium.otf */; };
 		A47A86CD2A93A98100407E13 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */; };
@@ -27,6 +25,7 @@
 		A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */; };
 		A47A86DC2A94FBD100407E13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86DB2A94FBD100407E13 /* LoginView.swift */; };
 		A47A86DF2A9526F300407E13 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A86DE2A9526F300407E13 /* CustomButton.swift */; };
+		A4BB42402A9E28D6000F2F88 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB423F2A9E28D6000F2F88 /* CustomScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +43,6 @@
 		A418A1E62A963324007C51C3 /* OnboardingPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageController.swift; sourceTree = "<group>"; };
 		A418A1E82A968D46007C51C3 /* OnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDelegate.swift; sourceTree = "<group>"; };
 		A418A1EB2A968DF6007C51C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A418A1ED2A968E1C007C51C3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		A418A1EF2A968EAF007C51C3 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		A47A86C62A93A09F00407E13 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A47A86C92A93A98100407E13 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		A47A86CA2A93A98100407E13 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -53,6 +50,7 @@
 		A47A86CF2A93AA0700407E13 /* UIFont+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
 		A47A86DB2A94FBD100407E13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A47A86DE2A9526F300407E13 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A4BB423F2A9E28D6000F2F88 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +155,6 @@
 			children = (
 				A47A86C62A93A09F00407E13 /* OnboardingView.swift */,
 				4C3862A72A758819005C9C3B /* OnboardingViewController.swift */,
-				A418A1EF2A968EAF007C51C3 /* OnboardingViewModel.swift */,
 				A418A1E62A963324007C51C3 /* OnboardingPageController.swift */,
 			);
 			path = Onboardings;
@@ -178,7 +175,6 @@
 			children = (
 				A47A86DB2A94FBD100407E13 /* LoginView.swift */,
 				A418A1EB2A968DF6007C51C3 /* LoginViewController.swift */,
-				A418A1ED2A968E1C007C51C3 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -187,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A47A86DE2A9526F300407E13 /* CustomButton.swift */,
+				A4BB423F2A9E28D6000F2F88 /* CustomScrollView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -268,9 +265,8 @@
 				A47A86C72A93A09F00407E13 /* OnboardingView.swift in Sources */,
 				4C3862A82A758819005C9C3B /* OnboardingViewController.swift in Sources */,
 				4C33FF352A75A4550002E765 /* DS+Colors.swift in Sources */,
-				A418A1F02A968EAF007C51C3 /* OnboardingViewModel.swift in Sources */,
 				A418A1EC2A968DF6007C51C3 /* LoginViewController.swift in Sources */,
-				A418A1EE2A968E1C007C51C3 /* LoginViewModel.swift in Sources */,
+				A4BB42402A9E28D6000F2F88 /* CustomScrollView.swift in Sources */,
 				4C33FF332A75A3F40002E765 /* DS.swift in Sources */,
 				A47A86D02A93AA0700407E13 /* UIFont+ext.swift in Sources */,
 				4C33FF2E2A75A2640002E765 /* UIColor+ext.swift in Sources */,

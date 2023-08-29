@@ -17,8 +17,6 @@ class OnboardingPageViewController: UIPageViewController {
     let initialPage = 0
     var isPerformingSkipAction = false
     
-    var viewModel: OnboardingViewModel?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageViewController()
@@ -45,6 +43,9 @@ class OnboardingPageViewController: UIPageViewController {
             pageControl.heightAnchor.constraint(equalToConstant: 30),
             pageControl.widthAnchor.constraint(equalToConstant: 150)
         ])
+    }
+    func markOnboardingAsCompleted() {
+        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
     }
 }
 
