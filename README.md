@@ -7,8 +7,3 @@ A aplicação adota uma abordagem de onboarding interativo para proporcionar aos
 Linguagem: Swift
 Frameworks: UIKit
 Arquitetura: MVC (Model-View-Controller)
-Instruções para Compilação e Execução:
-
-Abra o projeto no Xcode.
-Selecione um simulador de dispositivo iOS ou conecte um dispositivo físico.
-Execute o aplicativo pressionando o botão "Run" no Xcode.
